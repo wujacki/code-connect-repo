@@ -1,0 +1,9 @@
+name: Hello World
+on: [push]
+jobs:
+  Hello-World-Job:
+    runs-on:
+      - codebuild-avp-18204-${{ github.run_id }}-${{ github.run_attempt }}
+      - build-target:985539789919-avp-18204-child
+    steps:
+      - run: echo "Hello World!"
